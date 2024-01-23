@@ -17885,7 +17885,7 @@ textarea[resize="horizontal"] {
     margin-bottom: 1.5rem;
 }
 .application .sidenav-header .navbar-brand img {
-    height: 1.5rem;
+    height: 2rem;
 }
 .application .sidenav-user {
     height: 290px;
@@ -18821,7 +18821,7 @@ textarea[resize="horizontal"] {
         overflow-y: scroll;
     }
     .navbar-expand-sm .navbar-brand img {
-        height: 1.25rem;
+        height: 1.5rem;
     }
     .navbar-expand-sm .navbar-brand.dropdown-toggle:after {
         float: none;
@@ -18918,7 +18918,7 @@ textarea[resize="horizontal"] {
         overflow-y: scroll;
     }
     .navbar-expand-md .navbar-brand img {
-        height: 1.25rem;
+        height: 1.5rem;
     }
     .navbar-expand-md .navbar-brand.dropdown-toggle:after {
         float: none;
@@ -18977,7 +18977,7 @@ textarea[resize="horizontal"] {
 }
 @media (min-width: 768px) {
     .navbar-expand-md .navbar-brand img {
-        height: 1.5rem;
+        height: 2rem;
     }
     .navbar-expand-md .navbar-brand.dropdown-toggle:after {
         display: none;
@@ -19015,7 +19015,7 @@ textarea[resize="horizontal"] {
         overflow-y: scroll;
     }
     .navbar-expand-lg .navbar-brand img {
-        height: 1.25rem;
+        height: 1.5rem;
     }
     .navbar-expand-lg .navbar-brand.dropdown-toggle:after {
         float: none;
@@ -19074,7 +19074,7 @@ textarea[resize="horizontal"] {
 }
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-brand img {
-        height: 1.5rem;
+        height: 2rem;
     }
     .navbar-expand-lg .navbar-brand.dropdown-toggle:after {
         display: none;
@@ -19112,7 +19112,7 @@ textarea[resize="horizontal"] {
         overflow-y: scroll;
     }
     .navbar-expand-xl .navbar-brand img {
-        height: 1.25rem;
+        height: 1.5rem;
     }
     .navbar-expand-xl .navbar-brand.dropdown-toggle:after {
         float: none;
@@ -19171,7 +19171,7 @@ textarea[resize="horizontal"] {
 }
 @media (min-width: 1200px) {
     .navbar-expand-xl .navbar-brand img {
-        height: 1.5rem;
+        height: 2rem;
     }
     .navbar-expand-xl .navbar-brand.dropdown-toggle:after {
         display: none;
@@ -19208,7 +19208,7 @@ textarea[resize="horizontal"] {
     overflow-y: scroll;
 }
 .navbar-expand .navbar-brand img {
-    height: 1.25rem;
+    height: 1.5rem;
 }
 .navbar-expand .navbar-brand.dropdown-toggle:after {
     float: none;
@@ -19265,7 +19265,7 @@ textarea[resize="horizontal"] {
     animation: none;
 }
 .navbar-expand .navbar-brand img {
-    height: 1.5rem;
+    height: 2rem;
 }
 .navbar-expand .navbar-brand.dropdown-toggle:after {
     display: none;

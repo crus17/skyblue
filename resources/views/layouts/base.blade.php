@@ -57,10 +57,10 @@
             <!-- Logo container-->
             <div>
                 <a class="logo d-none d-sm-block" href="/">
-                    <img src="{{ asset('storage/' . $settings->logo) }}" height="35" alt="" class="mr-2">
+                    <img src="{{ asset('storage/' . $settings->logo) }}" height="50" alt="" class="mr-2">
                 </a>
                 <a class="logo d-sm-none" href="/">
-                    <img src="{{ asset('storage/' . $settings->logo) }}" width="80" alt="">
+                    <img src="{{ asset('storage/' . $settings->logo) }}" width="150" alt="">
                 </a>
                 <!-- <a class="logo d-sm-none" href="/">
                     <img src="{{ asset('themes/purposeTheme/assets/img/logo.png') }}" height="25" alt="" class="mr-2">
