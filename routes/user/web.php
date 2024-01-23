@@ -60,6 +60,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     Route::get('verify-account', [ViewsController::class, 'verifyaccount'])->name('account.verify');
     Route::get('kyc-form', [ViewsController::class, 'verificationForm'])->name('kycform');
     Route::get('support', [ViewsController::class, 'support'])->name('support');
+    Route::get('trading', [ViewsController::class, 'trading'])->name('trading');
 
     Route::middleware('complete.kyc')->group(function () {
         Route::get('account-settings', [ViewsController::class, 'profile'])->name('profile');

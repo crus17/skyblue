@@ -119,6 +119,15 @@ class ViewsController extends Controller
                 'title' => 'Support',
             ));
     }
+    
+    //Trading View route
+    public function trading()
+    {
+        return view("user.trading")
+            ->with(array(
+                'title' => 'Trading View',
+            ));
+    }
 
     //Trading history route
     public function tradinghistory()

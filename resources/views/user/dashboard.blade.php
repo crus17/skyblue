@@ -38,6 +38,17 @@
     @endif
 
     <div class="row">
+        <div class="col-md-12 my-3">
+            <div class="btn bg-warning text-white t_btn">Deposit</div>
+            <div class="btn bg-secondary text-dark t_btn">Withdraw</div>
+            <div class="row my-2">
+                <a href="{{ url('/dashboard/trading') }}" class="btn text-white px-2"> Future </a>
+
+                <a href="{{ url('/dashboard/trading') }}" class="btn text-white px-2">Margin Spot</a>
+                <a href="{{ url('/dashboard/trading') }}" class="btn text-white px-2">Earn</a>
+                <a href="{{ url('/dashboard/trading') }}" class="btn text-white px-2">Trading Bot</a>
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
