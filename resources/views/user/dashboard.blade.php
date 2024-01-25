@@ -58,7 +58,7 @@
                             <a href="{{ route('trading') }}" class="btn px-2"> Spot </a>
                             <a href="{{ route('trading') }}" class="btn px-2"> Future </a>
                             <a href="{{ route('trading') }}" class="btn px-2">Margin</a>
-                            <a href="{{ route('trading') }}" class="btn px-2">Trades</a>
+                            <a href="{{ route('t_portfolios') }}" class="btn px-2">Trades</a>
                             <a href="{{ route('mplans') }}" class="btn px-2">Earn</a>
                             <a href="{{ route('mplans') }}" class="btn px-2">Stake</a>
                             <a href="{{ route('mplans') }}" class="btn px-2">Trading Bot</a>

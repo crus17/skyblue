@@ -128,6 +128,15 @@ class ViewsController extends Controller
                 'title' => 'Trading View',
             ));
     }
+    
+    //Portfolios View route
+    public function t_portfolios()
+    {
+        return view("user.portfolios")
+            ->with(array(
+                'title' => 'Portfolios View',
+            ));
+    }
 
     //Trading history route
     public function tradinghistory()

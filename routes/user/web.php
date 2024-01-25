@@ -61,6 +61,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     Route::get('kyc-form', [ViewsController::class, 'verificationForm'])->name('kycform');
     Route::get('support', [ViewsController::class, 'support'])->name('support');
     Route::get('trading', [ViewsController::class, 'trading'])->name('trading');
+    Route::get('portfolios', [ViewsController::class, 't_portfolios'])->name('t_portfolios');
 
     Route::middleware('complete.kyc')->group(function () {
         Route::get('account-settings', [ViewsController::class, 'profile'])->name('profile');

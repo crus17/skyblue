@@ -3,27 +3,13 @@
 @section('title', $title)
 @section('content')
     <!-- Page title -->
-	<div class="tradingview-widget-container" style="margin:30px 0px 10px 0px;background:#fff;">
-		<div id="tradingview_f933e"></div>
-		<div class="trading_btns">
-
-			<a href="{{ route('trading') }}" class="btn icon_btn">
-				<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-				<span class="label">More</span>
-			</a>
-			<a href="{{ route('trading') }}" class="btn icon_btn">
-				<i class="fa fa-bell" aria-hidden="true"></i>
-				<span class="label">Alert</span>
-			</a>
-			<a href="{{ route('trading') }}" class="btn icon_btn">
-				<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-				<span class="label">Margin</span>
-			</a>
-			<a href="{{ route('trading') }}" class="btn icon_btn">
-				<i class="fa fa-th" aria-hidden="true"></i>
-				<span class="label">Grid</span>
-			</a>
+	<div class="col-12 card mb-1">
+		<div class="card-body">
+			<h5 class="text-primary h5">All portfolios</h5>
+			<span class="mb-0 h5 font-weight-bold">{{ $settings->currency }}{{ number_format(Auth::user()->account_bal, 2, '.', ',') }}</span>
 		</div>
+	</div>
+	<div class="tradingview-widget-container" style="background:#fff;">
 		<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 		<script type="text/javascript">
 			new TradingView.widget(
@@ -59,9 +45,26 @@
 			}
 			);
 		</script>
-		<div class="trading_btns py-2">
-			<a href="{{ route('mplans') }}" class="btn t_btn bg-danger">Buy</a>
-			<a href="{{ route('mplans') }}" class="btn t_btn bg-success">Sell</a>
+		<div class="trading_btns my-2">
+			
+			<a href="{{ route('deposits') }}">
+				<div class="d-flex justify-content-between align-items-center px-3 mt-3">
+					<div class="h5">Trade</div>
+					<div class="d-flex flex-column text-right">
+						<div class="text-dark">$10</div>
+						<div class="text-muted">BTC</div>
+					</div>
+				</div>
+			</a>
+			<a href="{{ route('deposits') }}">
+				<div class="d-flex justify-content-between align-items-center px-3 mt-3">
+					<div class="h5">Liverage</div>
+					<div class="d-flex flex-column text-right">
+						<div class="text-dark">$10</div>
+						<div class="text-muted">USDT</div>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
              
