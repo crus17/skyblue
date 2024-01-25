@@ -7,24 +7,22 @@
 		<div id="tradingview_f933e"></div>
 		<div class="trading_btns">
 
-			<a href="{{ url('/dashboard/deposits') }}" class="btn icon_btn">
+			<a href="{{ route('trading') }}" class="btn icon_btn">
 				<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
 				<span class="label">More</span>
 			</a>
-			<a href="{{ url('/dashboard/deposits') }}" class="btn icon_btn">
+			<a href="{{ route('trading') }}" class="btn icon_btn">
 				<i class="fa fa-bell" aria-hidden="true"></i>
 				<span class="label">Alert</span>
 			</a>
-			<a href="{{ url('/dashboard/deposits') }}" class="btn icon_btn">
+			<a href="{{ route('trading') }}" class="btn icon_btn">
 				<i class="fa fa-arrows-alt" aria-hidden="true"></i>
 				<span class="label">Margin</span>
 			</a>
-			<a href="{{ url('/dashboard/deposits') }}" class="btn icon_btn">
+			<a href="{{ route('trading') }}" class="btn icon_btn">
 				<i class="fa fa-th" aria-hidden="true"></i>
 				<span class="label">Grid</span>
 			</a>
-			<a href="{{ route('mplans') }}" class="btn t_btn bg-danger">Buy</a>
-			<a href="{{ route('mplans') }}" class="btn t_btn bg-success">Sell</a>
 		</div>
 		<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 		<script type="text/javascript">
@@ -61,6 +59,10 @@
 			}
 			);
 		</script>
+		<div class="trading_btns mt-1">
+			<a href="{{ route('mplans') }}" class="btn t_btn bg-danger">Buy</a>
+			<a href="{{ route('mplans') }}" class="btn t_btn bg-success">Sell</a>
+		</div>
 	</div>
              
 @endsection
