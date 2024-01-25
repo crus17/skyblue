@@ -23,8 +23,8 @@
 				<i class="fa fa-th" aria-hidden="true"></i>
 				<span class="label">Grid</span>
 			</a>
-			<a href="{{url('/dashboard/deposits')}}" class="btn t_btn bg-danger">Buy</a>
-			<a href="{{url('/dashboard/deposits')}}" class="btn t_btn bg-success">Sell</a>
+			<a href="{{ route('mplans') }}" class="btn t_btn bg-danger">Buy</a>
+			<a href="{{ route('mplans') }}" class="btn t_btn bg-success">Sell</a>
 		</div>
 		<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 		<script type="text/javascript">
