@@ -45,8 +45,8 @@
             </div>
         </div>
         <div class="col-md-12 mb-3">
-            <div class="btn bg-warning text-white t_btn">Deposit</div>
-            <div class="btn bg-secondary text-dark t_btn">Withdraw</div>
+            <a href="{{ url('/dashboard/deposits') }}" class="btn bg-warning text-white t_btn">Deposit</a>
+            <a href="{{ url('/dashboard/withdrawals') }}" class="btn bg-secondary text-dark t_btn">Withdraw</a>
             
         </div>
         <div class="col-md-12">

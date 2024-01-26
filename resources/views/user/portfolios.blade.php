@@ -51,7 +51,7 @@
 				<div class="d-flex justify-content-between align-items-center px-3 mt-3">
 					<div class="h5">Trade</div>
 					<div class="d-flex flex-column text-right">
-						<div class="text-dark">$10</div>
+						<div class="text-dark">$100</div>
 						<div class="text-muted">BTC</div>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 				<div class="d-flex justify-content-between align-items-center px-3 mt-3">
 					<div class="h5">Liverage</div>
 					<div class="d-flex flex-column text-right">
-						<div class="text-dark">$10</div>
+						<div class="text-dark">$100</div>
 						<div class="text-muted">USDT</div>
 					</div>
 				</div>
