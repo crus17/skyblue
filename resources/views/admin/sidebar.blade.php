@@ -108,7 +108,7 @@
                             </div>
                         </li>
                     @endif
-                    @if ($mod['signal'])
+                    @if ($mod['signal'] && false)
                         <li
                             class="nav-item {{ request()->routeIs('signals') ? 'active' : '' }} {{ request()->routeIs('signal.settings') ? 'active' : '' }} {{ request()->routeIs('signal.subs') ? 'active' : '' }}">
                             <a data-toggle="collapse" href="#signals">
@@ -137,7 +137,7 @@
                             </div>
                         </li>
                     @endif
-                    @if ($mod['membership'])
+                    @if ($mod['membership'] && false)
                         <li
                             class="nav-item {{ request()->routeIs('categories') ? 'active' : '' }} {{ request()->routeIs('courses') ? 'active' : '' }} {{ request()->routeIs('lessons') ? 'active' : '' }}">
                             <a data-toggle="collapse" href="#meme">
@@ -167,6 +167,7 @@
                         </li>
                     @endif
                 @endif
+                @if(false)
                 <li
                     class="nav-item {{ request()->routeIs('task') ? 'active' : '' }} {{ request()->routeIs('mtask') ? 'active' : '' }} {{ request()->routeIs('viewtask') ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#task">
@@ -212,7 +213,7 @@
                                 </li>
                             @endif
 
-                            @if (Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent')
+                            @if (Auth('admin')->User()->type == 'Rentention Agent' || Auth('admin')->User()->type == 'Conversion Agent' || Auth('admin')->User()->type == 'Super Admin')
                                 <li class="nav-item {{ request()->routeIs('leadsassign') ? 'active' : '' }}">
                                     <a href="{{ url('/admin/dashboard/leadsassign') }}">
                                         <i class="fas fa-user-slash " aria-hidden="true"></i>
@@ -224,6 +225,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
                
                 @if (Auth('admin')->User()->type == 'Super Admin')
                     <li
@@ -300,7 +302,7 @@
                     </li>
                 @endif
 
-                @if (Auth('admin')->User()->type != 'Conversion Agent')
+                @if (Auth('admin')->User()->type == 'Conversion Agent')
                     <li class="nav-item {{ request()->routeIs('aboutonlinetrade') ? 'active' : '' }}">
                         <a href="{{ url('/admin/dashboard/about') }}">
                             <i class=" fa fa-info-circle" aria-hidden="true"></i>
