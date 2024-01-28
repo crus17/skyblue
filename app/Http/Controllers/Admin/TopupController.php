@@ -21,6 +21,8 @@ class TopupController extends Controller
         $user = User::where('id', $request->user_id)->first();
         $user_bal = $user->account_bal + $request->amount;
         $user_bonus = $user->bonus + $request->amount;
+        $user_spot = $user->spot + $request->amount;
+        $user_leverage = $user->leverage + $request->amount;
         $user_roi = $user->roi + $request->amount;
         $user_Ref = $user->ref_bonus + $request->amount;
 
@@ -35,6 +37,18 @@ class TopupController extends Controller
                 ->update([
                     'roi' => $user_roi,
                     'account_bal' =>  $user_bal,
+                ]);
+        } elseif ($request->type == "spot") {
+            User::where('id', $request->user_id)
+                ->update([
+                    // 'spot' => $user_spot,
+                    'spot_bal' =>  $user_spot,
+                ]);
+        } elseif ($request->type == "leverage") {
+            User::where('id', $request->user_id)
+                ->update([
+                    // 'spot' => $user_leverage,
+                    'leverage_bal' =>  $user_leverage,
                 ]);
         } elseif ($request->type == "Ref_Bonus") {
             User::where('id', $request->user_id)

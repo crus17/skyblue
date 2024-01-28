@@ -28,7 +28,9 @@
                              <option value="" selected disabled>Select Column</option>
                              <option value="Bonus">Bonus</option>
                              <option value="Profit">Profit</option>
-                             <option value="Ref_Bonus">Ref_Bonus</option>
+                             <option value="spot">Spot</option>
+                             <option value="leverage">Leverage</option>
+                             <option value="Ref_Bonus">Ref Bonus</option>
                              <option value="balance">Account Balance</option>
                              <option value="Deposit">Deposit</option>
                          </select>
