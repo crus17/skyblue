@@ -19,9 +19,13 @@
     <div class="mt-2 mb-5 row">
         <div class="col-12">
             <div class="card p-md-5 p-2 shadow-lg ">
+                @if(Auth('admin')->User()->type != 'Admin')
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a href="#module" class="nav-link active" data-toggle="tab">Modules</a>
+                        <a href="#basic" class="nav-link active" data-toggle="tab">Basic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#module" class="nav-link" data-toggle="tab">Modules</a>
                     </li>
                     <li class="nav-item">
                         <a href="#info" class="nav-link " data-toggle="tab">Website Information</a>
@@ -36,8 +40,12 @@
                         <a href="#display" class="nav-link" data-toggle="tab">Theme/Display</a>
                     </li>
                 </ul>
+                @endif
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="module">
+                    <div class="tab-pane fade show active" id="basic">
+                        @include('admin.Settings.AppSettings.basic')
+                    </div>
+                    <div class="tab-pane fade" id="module">
                         <livewire:admin.software-module />
                     </div>
                     <div class="tab-pane fade" id="info">

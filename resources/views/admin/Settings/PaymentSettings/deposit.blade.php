@@ -2,8 +2,11 @@
     <div class="col-md-12">
         <div>
             <h3 class="d-inline ">Payment Methods</h3>
+
+            @if(Auth('admin')->User()->type != 'Admin')
             <a href="#" data-toggle="modal" data-target="#adduser" class="float-right btn btn-primary btn-sm"> <i
                     class='fas fa-plus-circle'></i> Add New</a>
+            @endif
             <!-- Modal -->
             <div class="modal fade" id="adduser" tabindex="-1" aria-h6ledby="exampleModalh6" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -144,45 +147,57 @@
                         <th scope="col">Method Name</th>
                         <th scope="col">Type</th>
                         <th scope="col">Used for</th>
+                        @if(Auth('admin')->User()->type != 'Admin')
                         <th scope="col">Status</th>
+                        @endif
                         <th scope="col">Option</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($methods as $method)
-                        <tr>
-                            <th>{{ $method->name }}</th>
-                            <td>{{ $method->methodtype }}</td>
-                            <td>{{ $method->type }}</td>
-                            <td>
-                                @if ($method->status == 'enabled')
-                                    <span class=" badge badge-success">{{ $method->status }}</span>
-                                @else
-                                    <span class=" badge badge-danger">{{ $method->status }}</span>
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{ route('editpaymethod', $method->id) }}" class="m-1 btn btn-primary btn-sm"
-                                    title="View">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                @if ($method->defaultpay == 'yes')
-                                    <button class=" btn btn-danger btn-sm" disabled data-toggle="tooltip"
-                                        data-placement="top" title="you cannot delete default method">Delete</button>
-                                @else
-                                    <a href="{{ route('deletepaymethod', $method->id) }}"
-                                        class="m-1 btn btn-danger btn-sm">Delete</a>
-                                @endif
-                                @if ($method->status == 'enabled')
-                                    <a href="{{ route('togglestatus', $method->id) }}"
-                                        class="m-1 btn btn-warning btn-sm">Disable</a>
-                                @else
-                                    <a href="{{ route('togglestatus', $method->id) }}"
-                                        class="m-1 btn btn-success btn-sm">Enable</a>
+                        @if((Auth('admin')->User()->type == 'Admin' && $method->status == 'enabled')||Auth('admin')->User()->type != 'Admin')
+                            <tr>
+                                <th>{{ $method->name }}</th>
+                                <td>{{ $method->methodtype }}</td>
+                                <td>{{ $method->type }}</td>
+                                
+                                @if(Auth('admin')->User()->type != 'Admin')
+                                <td>
+                                    @if ($method->status == 'enabled')
+                                        <span class=" badge badge-success">{{ $method->status }}</span>
+                                    @else
+                                        <span class=" badge badge-danger">{{ $method->status }}</span>
+                                    @endif
+                                </td>
                                 @endif
 
-                            </td>
-                        </tr>
+                                <td>
+                                    <a href="{{ route('editpaymethod', $method->id) }}" class="m-1 btn btn-primary btn-sm"
+                                        title="View">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    
+                                    @if(Auth('admin')->User()->type != 'Admin')
+                                    @if ($method->defaultpay == 'yes')
+                                        <button class=" btn btn-danger btn-sm" disabled data-toggle="tooltip"
+                                            data-placement="top" title="you cannot delete default method">Delete</button>
+                                    @else
+                                        <a href="{{ route('deletepaymethod', $method->id) }}"
+                                            class="m-1 btn btn-danger btn-sm">Delete</a>
+                                    @endif
+                                    @if ($method->status == 'enabled')
+                                        <a href="{{ route('togglestatus', $method->id) }}"
+                                            class="m-1 btn btn-warning btn-sm">Disable</a>
+                                    @else
+                                        <a href="{{ route('togglestatus', $method->id) }}"
+                                            class="m-1 btn btn-success btn-sm">Enable</a>
+                                    @endif
+                                    @endif
+
+
+                                </td>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>

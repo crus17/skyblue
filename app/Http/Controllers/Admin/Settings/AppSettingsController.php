@@ -133,6 +133,20 @@ class AppSettingsController extends Controller
 
 
 
+    public function updatebasic(Request $request)
+    {
+
+        Settings::where('id', 1)->update([
+            'phone_number' => $request['phone_number'],
+            'whatsapp' => $request['whatsapp'],
+        ]);
+
+        return redirect()->back()->with('success', 'Settings Saved successfully');
+
+        // return response()->json(['status' => 200, 'success' => 'Settings Saved successfully']);
+    }
+
+
     public function updatepreference(Request $request)
     {
 

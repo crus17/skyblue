@@ -78,6 +78,22 @@
                             <p>KYC Application(s)</p>
                         </a>
                     </li>
+                    @if(Auth('admin')->User()->type == 'Admin')
+                        <li
+                            class="nav-item {{ request()->routeIs('paymentview') ? 'active' : '' }} {{ request()->routeIs('viewkyc') ? 'active' : '' }}">
+                            <a href="{{ route('paymentview') }}">
+                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                <p>Payment Settings</p>
+                            </a>
+                        </li>
+                        <li
+                            class="nav-item {{ request()->routeIs('appsettingshow') ? 'active' : '' }} {{ request()->routeIs('viewkyc') ? 'active' : '' }}">
+                            <a href="{{ route('appsettingshow') }}">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <p>App Settings</p>
+                            </a>
+                        </li>
+                    @endif
 
                     @if ($mod['subscription'])
                         <li

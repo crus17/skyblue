@@ -7,6 +7,8 @@
     <div class="mb-5 row">
         <div class="col-12">
             <div class="card p-md-5 p-2 shadow-lg ">
+                
+                @if(Auth('admin')->User()->type != 'Admin')
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a href="#dep" class="nav-link active" data-toggle="tab">Payment Methods</a>
@@ -24,6 +26,7 @@
                         <a href="#trans" class="nav-link" data-toggle="tab">Transfer</a>
                     </li>
                 </ul>
+                @endif
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="dep">
                         @include('admin.Settings.PaymentSettings.deposit')

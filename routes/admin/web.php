@@ -226,6 +226,7 @@ Route::middleware(['isadmin', '2fa'])->prefix('admin/dashboard')->group(function
 
     Route::controller(AppSettingsController::class)->group(function () {
         // Update App Information
+        Route::put('updatebasic', 'updatebasic')->name('updatebasic');
         Route::put('updatewebinfo', 'updatewebinfo')->name('updatewebinfo');
         Route::put('updatepreference', 'updatepreference')->name('updatepreference');
         Route::put('updateemail', 'updateemail')->name('updateemailpreference');
