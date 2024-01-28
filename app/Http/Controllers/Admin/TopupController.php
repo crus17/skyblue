@@ -21,8 +21,8 @@ class TopupController extends Controller
         $user = User::where('id', $request->user_id)->first();
         $user_bal = $user->account_bal + $request->amount;
         $user_bonus = $user->bonus + $request->amount;
-        $user_spot = $user->spot + $request->amount;
-        $user_leverage = $user->leverage + $request->amount;
+        $user_spot = $user->spot_bal + $request->amount;
+        $user_leverage = $user->leverage_bal + $request->amount;
         $user_roi = $user->roi + $request->amount;
         $user_Ref = $user->ref_bonus + $request->amount;
 
