@@ -57,6 +57,9 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- Get users language -->
+                                            <input type="hidden" name="user_language" id="user_language" value="{{ app()->getLocale() }}">
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Full Name <span class="text-danger">*</span></label>

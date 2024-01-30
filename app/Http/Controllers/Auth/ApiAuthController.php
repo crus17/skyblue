@@ -32,6 +32,7 @@ class ApiAuthController extends Controller
             'phone' => $request['phone'],
             'username' => $request['username'],
             'country' => $request['country'],
+            'user_language' => $request['user_language'],
             'status' => 'active',
             'password' => Hash::make($request['password']),
         ]);
