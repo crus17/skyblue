@@ -32,6 +32,16 @@
         <link rel="stylesheet" href="{{ asset('themes/purposeTheme/assets/libs/flatpickr/dist/flatpickr.min.css') }}">
     @show
     @livewireStyles
+
+    <!-- Google Transalate gadget -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
 </head>
 
 <body class="application application-offset">
@@ -47,6 +57,19 @@
             <!-- Main nav -->
             @include('user.topmenu')
 
+            <!-- Google Transalate -->
+            @if ($settings->google_translate == 'on')
+                <style>
+                    .skiptranslate {
+                        display: flex;
+                        align-items: center;
+                        padding: 10px;
+                        justify-content: center
+                    }
+                </style>
+                <div id="google_translate_element"></div>
+            @endif
+
             <!-- Page content -->
             <div class="page-content">
                 @yield('content')
@@ -58,11 +81,6 @@
                         <p class="mb-0 text-sm">All Rights Reserved &copy; {{ $settings->site_name }}
                             {{ date('Y') }}</p>
                     </div>
-                    @if ($settings->google_translate == 'on')
-                        <div class="text-right col-sm-6 text-md-center">
-                            <div id="google_translate_element"></div>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
@@ -92,16 +110,8 @@
     @show
 
     <script src="{{ asset('themes/purposeTheme/assets/js/scriptfile.js') }}"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>

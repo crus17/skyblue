@@ -2264,7 +2264,7 @@ p {
   }
 }
 #topnav {
-  position: fixed;
+  position: sticky;
   right: 0;
   left: 0;
   top: 0;
@@ -5074,7 +5074,7 @@ p {
 	 color: #757575;
 	 font-size: 14px;
 	 font-weight: 500;
-	 font-family: -apple-system, BlinkMacSystemFont, &#34;
+	 font-family: -apple-system, BlinkMacSystemFont, '&#34';
 	 background-color: white;
 }
  .login-with-google-btn:hover {

@@ -24,9 +24,31 @@
         <link href="{{ asset('themes/purposeTheme/temp/css/style.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('themes/purposeTheme/temp/css/colors/' . $theme) }}" rel="stylesheet">
     @show
+
+    <!-- Google Transalate gadget -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
 </head>
 
 <body class="bg-soft-primary">
+    @if ($settings->google_translate == 'on')
+        <style>
+            .skiptranslate {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                justify-content: center
+            }
+        </style>
+        <div id="google_translate_element"></div>
+    @endif
+
     @yield('content')
 
     @section('scripts')
@@ -43,9 +65,11 @@
         <script src="{{ asset('themes/purposeTheme/temp/js/app.js') }}"></script>
         <script src="{{ asset('themes/purposeTheme/temp/js/widget.js') }}"></script>
     @show
+    
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.4/dist/livewire-turbolinks.js"
         data-turbolinks-eval="false" data-turbo-eval="false"></script>
+
 </body>
 
 </html>

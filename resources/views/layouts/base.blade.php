@@ -42,6 +42,16 @@
         <link href="{{ asset('themes/purposeTheme/temp/css/style.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('themes/purposeTheme/temp/css/colors/' . $theme) }}" rel="stylesheet">
     @show
+
+    <!-- Google Transalate gadget -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
 </head>
 
 <body>
@@ -127,6 +137,18 @@
     </header>
     <!--end header-->
     <!-- Navbar End -->
+    
+    @if ($settings->google_translate == 'on')
+        <style>
+            .skiptranslate {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                justify-content: center
+            }
+        </style>
+        <div id="google_translate_element"></div>
+    @endif
 
     @yield('content')
 
@@ -228,6 +250,8 @@
         <script src="{{ asset('themes/purposeTheme/temp/js/widget.js') }}"></script>
     @show
 </body>
+
+
 <!-- Whatsapp Goes -->
 <a href="https://api.whatsapp.com/send?phone={{$settings->whatsapp}}&text= Hello {{$settings->site_name}}" id="WhatsAppBtnDesktop" target="_blank" class="anchor-btn" lang="en">
     <div id="capitol-callback">
