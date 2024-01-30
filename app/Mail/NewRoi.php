@@ -36,6 +36,8 @@ class NewRoi extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.newroi')->subject($this->subject);
+        $preferredLanguage = $this->user->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.newroi' : 'emails.newroi';
+        return $this->markdown($template)->subject($this->subject);
     }
 }

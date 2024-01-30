@@ -35,7 +35,9 @@ class NewNotification extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.NewNotification',[
+        $preferredLanguage = $this->body->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.NewNotification' : 'emails.NewNotification';
+        return $this->markdown($template,[
             'url' => $this->url,
             'attachment' => $this->attachment,
             'body' => $this->body,

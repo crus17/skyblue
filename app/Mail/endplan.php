@@ -30,6 +30,8 @@ class endplan extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.endplan')->subject($this->demo->subject);
+        $preferredLanguage = $this->demo->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.endplan' : 'emails.endplan';
+        return $this->markdown($template)->subject($this->demo->subject);
     }
 }

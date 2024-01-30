@@ -30,6 +30,8 @@ class NewRegistration extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.demotext');
+        $preferredLanguage = $this->demo->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.demotext' : 'emails.demotext';
+        return $this->markdown($template);
     }
 }

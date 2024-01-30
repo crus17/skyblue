@@ -34,6 +34,8 @@ class WithdrawalStatus extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.withdrawal-status')->subject($this->subject);
+        $preferredLanguage = $this->user->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.withdrawal-status' : 'emails.withdrawal-status';
+        return $this->markdown($template)->subject($this->subject);
     }
 }

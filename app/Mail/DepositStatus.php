@@ -34,6 +34,8 @@ class DepositStatus extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.success-deposit')->subject($this->subject);
+        $preferredLanguage = $this->user->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.success-deposit' : 'emails.success-deposit';
+        return $this->markdown($template)->subject($this->subject);
     }
 }

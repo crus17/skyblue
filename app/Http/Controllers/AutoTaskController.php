@@ -218,6 +218,7 @@ class AutoTaskController extends Controller
                         $objDemo->received_amount = "$settings->currency$plan->amount";
                         $objDemo->sender = $settings->site_name;
                         $objDemo->receiver_name = $user->name;
+                        $objDemo->user_language = $user->user_language;
                         $objDemo->date = \Carbon\Carbon::Now();
                         $objDemo->subject = "Investment plan closed";
                         Mail::to($user->email)->send(new endplan($objDemo));

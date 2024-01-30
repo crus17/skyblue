@@ -31,6 +31,9 @@ class Twofa extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.2fa')->subject($this->demo->subject);
+        
+        $preferredLanguage = $this->demo->user_language ?? 'en';
+        $template = $preferredLanguage  === 'es' ? 'emails.es.2fa' : 'emails.2fa';
+        return $this->markdown($template)->subject($this->demo->subject);
     }
 }

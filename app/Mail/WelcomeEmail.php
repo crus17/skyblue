@@ -33,6 +33,9 @@ class WelcomeEmail extends Mailable
     {
         $settings = Settings::find(1);
 
-        return $this->markdown('emails.welcome')->subject("Welcome to $settings->site_name");
+        $preferredLanguage = $this->user->user_language ?? 'en';
+        $template = $preferredLanguage === 'es' ? 'emails.es.welcome' : 'emails.welcome';
+        
+        return $this->markdown($template)->subject("Welcome to $settings->site_name");
     }
 }
