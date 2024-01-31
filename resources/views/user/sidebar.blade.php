@@ -118,13 +118,13 @@
                 <span class="pt-2 btn-inner--icon d-block">My Plans</span>
             </a>
         @endif
-        @if ($mod['membership'])
+        <!-- @if ($mod['membership'])
             <a href="{{ route('user.courses') }}"
                 class="text-sm btn btn-square {{ request()->routeIs('user.mycourses') ? 'active' : '' }} {{ request()->routeIs('user.courses') ? 'active' : '' }} {{ request()->routeIs('user.course.details') ? 'active' : '' }}">
                 <span class="btn-inner--icon d-block"><i class="fas fa-graduation-cap fa-2x"></i></span>
                 <span class="pt-2 btn-inner--icon d-block">Education</span>
             </a>
-        @endif
+        @endif -->
         @if ($mod['signal'])
             <a href="{{ route('tsignals') }}"
                 class="text-sm btn btn-square {{ request()->routeIs('tsignals') ? 'active' : '' }}">
