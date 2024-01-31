@@ -62,9 +62,18 @@
                     <div class="text-center row copyright text-align-center">
                         <p>All Rights Reserved &copy; {{ $settings->site_name }} {{ date('Y') }}</p> <br>
                         @if ($settings->google_translate == 'on')
-                            <div class="text-center">
-                                <div id="google_translate_element"></div>
-                            </div>
+                            <style>
+                                .skiptranslate {
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 10px;
+                                    justify-content: center;
+                                }
+                                #goog-gt-tt{
+                                    display: none;
+                                }
+                            </style>
+                            <div id="google_translate_element"></div>
                         @endif
                     </div>
                 </div>

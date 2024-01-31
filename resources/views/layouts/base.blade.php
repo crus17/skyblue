@@ -144,7 +144,10 @@
                 display: flex;
                 align-items: center;
                 padding: 10px;
-                justify-content: center
+                justify-content: center;
+            }
+            #goog-gt-tt{
+                display: none;
             }
         </style>
         <div id="google_translate_element"></div>
