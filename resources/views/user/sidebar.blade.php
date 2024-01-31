@@ -124,7 +124,7 @@
                 <span class="btn-inner--icon d-block"><i class="fas fa-graduation-cap fa-2x"></i></span>
                 <span class="pt-2 btn-inner--icon d-block">Education</span>
             </a>
-        @endif -->
+        @endif
         @if ($mod['signal'])
             <a href="{{ route('tsignals') }}"
                 class="text-sm btn btn-square {{ request()->routeIs('tsignals') ? 'active' : '' }}">
@@ -133,7 +133,7 @@
                 </span>
                 <span class="pt-2 btn-inner--icon d-block">Trade Signals</span>
             </a>
-        @endif
+        @endif -->
         <a href="{{ route('referuser') }}"
             class="text-sm btn btn-square {{ request()->routeIs('referuser') ? 'active' : '' }}">
             <span class="btn-inner--icon d-block"><i class="fas fa-retweet fa-2x"></i></span>
