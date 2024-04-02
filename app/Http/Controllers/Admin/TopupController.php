@@ -80,7 +80,7 @@ class TopupController extends Controller
         $currency = Settings::select('currency')->find(1);
 
         // Send notification to user
-        $user->notify(new AccountNotification("You have a new {$request->type} transaction. Amount: {$currency}{$request->amount}.", 'System Topup'));
+        // $user->notify(new AccountNotification("You have a new {$request->type} transaction. Amount: {$currency}{$request->amount}.", 'System Topup'));
 
         //add history
         Tp_Transaction::create([
