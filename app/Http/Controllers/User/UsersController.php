@@ -42,7 +42,7 @@ class UsersController extends Controller
     $subject = "Inquiry from $request->name with email $request->email";
 
 
-    Mail::to($settings->contact_email)->send(new NewNotification($message, $subject, 'Admin'));
+    // Mail::to($settings->contact_email)->send(new NewNotification($message, $subject, 'Admin'));
 
     return redirect()->back()
       ->with('success', ' Your message was sent successfully!');
